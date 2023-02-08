@@ -1,0 +1,13 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+message CoinRatesCallData {
+  repeated string symbols = 1;
+  uint64 multiplier = 2;
+}
+
+message CoinRatesResult {
+  repeated uint64 rates = 1;
+}

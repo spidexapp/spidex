@@ -1,0 +1,16 @@
+{
+  "description": "description",
+  "denom_units": [
+    {
+      "denom": "ibc/947FE07CEC57712049C63060DB5CC30BFCFCA992997BC69E84EB356002D080F8"
+    },
+    {
+      "denom": "BAND",
+      "exponent": 18
+    }
+  ],
+  "base": "ibc/947FE07CEC57712049C63060DB5CC30BFCFCA992997BC69E84EB356002D080F8",
+  "display": "BAND",
+  "name": "Band",
+  "symbol": "BAND"
+}

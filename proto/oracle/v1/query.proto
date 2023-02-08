@@ -1,0 +1,76 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "oracle/v1/params.proto";
+import "oracle/v1/coin_rates.proto";
+import "oracle/v1/coin_symbol.proto";
+// this line is used by starport scaffolding # 1
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/spidex/oracle/params";
+  }
+
+  // CoinRatesResult defines a rpc handler method for MsgCoinRatesData.
+  rpc CoinRatesResult(QueryCoinRatesRequest) returns (QueryCoinRatesResponse) {
+    option (google.api.http).get = "/spidex/oracle/coin_rates_result/{request_id}";
+  }
+
+  // LastCoinRatesId query the last CoinRates result id
+  rpc LastCoinRatesId(QueryLastCoinRatesIdRequest) returns (QueryLastCoinRatesIdResponse) {
+    option (google.api.http).get = "/spidex/oracle/last_coin_rates_id";
+  }
+  // Queries a CoinSymbol by id.
+  rpc CoinSymbol(QueryGetCoinSymbolRequest) returns (QueryGetCoinSymbolResponse) {
+    option (google.api.http).get = "/ColosseumA/colosseuma/coin_symbol/{id}";
+  }
+
+  // Queries a list of CoinSymbol items.
+  rpc CoinSymbolAll(QueryAllCoinSymbolRequest) returns (QueryAllCoinSymbolResponse) {
+    option (google.api.http).get = "/ColosseumA/colosseuma/coin_symbol";
+  }
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryCoinRatesRequest {int64 request_id = 1;}
+
+message QueryCoinRatesResponse {
+  CoinRatesResult result = 1;
+}
+
+message QueryLastCoinRatesIdRequest {}
+
+message QueryLastCoinRatesIdResponse {int64 request_id = 1;}
+
+// this line is used by starport scaffolding # 3
+message QueryGetCoinSymbolRequest {
+  uint64 id = 1;
+}
+
+message QueryGetCoinSymbolResponse {
+  CoinSymbol CoinSymbol = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCoinSymbolRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCoinSymbolResponse {
+  repeated CoinSymbol CoinSymbol = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

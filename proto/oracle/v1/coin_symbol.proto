@@ -1,0 +1,10 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+message CoinSymbol {
+  uint64 id = 1;
+  string symbol = 2;
+  bool isDeleted = 3;
+}

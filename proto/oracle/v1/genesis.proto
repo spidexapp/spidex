@@ -1,0 +1,16 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+import "gogoproto/gogo.proto";
+import "oracle/v1/params.proto";
+import "oracle/v1/coin_symbol.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+// GenesisState defines the oracle module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  string port_id = 2;
+  repeated CoinSymbol coinSymbolList = 3 [(gogoproto.nullable) = false];
+}

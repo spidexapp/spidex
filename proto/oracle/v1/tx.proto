@@ -1,0 +1,90 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "oracle/v1/coin_rates.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc CreateCoinSymbol(MsgCreateCoinSymbol) returns (MsgCreateCoinSymbolResponse);
+  rpc CoinRatesData(MsgCoinRatesData) returns (MsgCoinRatesDataResponse);
+  rpc UpdateCoinSymbol(MsgUpdateCoinSymbol) returns (MsgUpdateCoinSymbolResponse);
+  rpc UpdateAdmin(MsgUpdateAdmin) returns (MsgUpdateAdminResponse);
+  rpc UpdateChannel(MsgUpdateChannel) returns (MsgUpdateChannelResponse);
+  rpc UpdateScriptId(MsgUpdateScriptId) returns (MsgUpdateScriptIdResponse);
+  rpc UpdateMultiplier(MsgUpdateMultiplier) returns (MsgUpdateMultiplierResponse);
+
+  // this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCoinRatesData {
+  string creator = 1;
+  uint64 ask_count = 2;
+  uint64 min_count = 3;
+  repeated cosmos.base.v1beta1.Coin fee_limit = 4 [
+    (gogoproto.nullable) = false,
+    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
+  ];
+  uint64 prepare_gas = 5;
+  uint64 execute_gas = 6;
+  string client_id = 7 [(gogoproto.customname) = "ClientID"];
+}
+
+message MsgCoinRatesDataResponse {
+}
+
+message MsgCreateCoinSymbol {
+  string creator = 1;
+  string symbol = 2;
+  uint64 id = 3;
+}
+
+message MsgCreateCoinSymbolResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateCoinSymbol {
+  string creator = 1;
+  uint64 id = 2;
+  string symbol = 3;
+  bool isDelete = 4;
+}
+
+message MsgUpdateCoinSymbolResponse {
+}
+
+message MsgUpdateAdmin {
+  string creator = 1;
+  string newAdmin =2;
+}
+
+message MsgUpdateAdminResponse {
+}
+
+message MsgUpdateChannel {
+  string creator = 1;
+  string newChannel =2;
+}
+
+message MsgUpdateChannelResponse {
+}
+
+message MsgUpdateScriptId {
+  string creator = 1;
+  uint64 newScriptId =2;
+}
+
+message MsgUpdateScriptIdResponse {
+}
+
+message MsgUpdateMultiplier {
+  string creator = 1;
+  uint64 newMultiplier =2;
+}
+
+message MsgUpdateMultiplierResponse {
+}

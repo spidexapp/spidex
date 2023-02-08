@@ -1,0 +1,14 @@
+syntax = "proto3";
+package spidex.oracle.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/spidexapp/spidex/x/oracle/types";
+
+// Params defines the parameters for the module.
+message Params {
+  string admin = 1;
+  uint64 scriptId = 2;
+  string sourceChannel = 3;
+  uint64 multiplier = 4;
+}
