@@ -195,7 +195,7 @@ require (
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
 	github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
-	github.com/cosmos/cosmos-sdk => github.com/spidexapp/cosmos-sdk v0.46.5-log
+	github.com/cosmos/cosmos-sdk => github.com/spidexapp/cosmos-sdk v0.46.5-log2
 	github.com/cosmos/ibc-go/v5 => github.com/spidexapp/ibc-go/v5 v5.0.0-spidex
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 )
