@@ -2260,8 +2260,8 @@ github.com/spf13/viper v1.11.0/go.mod h1:djo0X/bA5+tYVoCn+C7cAYJGcVn/qYLFTG8gdUs
 github.com/spf13/viper v1.12.0/go.mod h1:b6COn30jlNxbm/V2IqWiNWkJ+vZNiMNksliPCiuKtSI=
 github.com/spf13/viper v1.13.0 h1:BWSJ/M+f+3nmdz9bxB+bWX28kkALN2ok11D0rSo8EJU=
 github.com/spf13/viper v1.13.0/go.mod h1:Icm2xNL3/8uyh/wFuB1jI7TiTNKp8632Nwegu+zgdYw=
-github.com/spidexapp/cosmos-sdk v0.46.5-log3 h1:nWhNcku0wwoOFFjYG5pCQh443nr8dbhY3rdzvQZf/ZQ=
-github.com/spidexapp/cosmos-sdk v0.46.5-log3/go.mod h1:JNklMfXo7MhDF1j/jxZCmDyOYyqhVoKB22e8p1ATEqA=
+github.com/spidexapp/cosmos-sdk v0.46.5-log4 h1:u2k7qdwXj2GPgRwwp+z+nQfVf75imGQ7RfDO9FWHce4=
+github.com/spidexapp/cosmos-sdk v0.46.5-log4/go.mod h1:JNklMfXo7MhDF1j/jxZCmDyOYyqhVoKB22e8p1ATEqA=
 github.com/spidexapp/ibc-go/v5 v5.0.0-spidex h1:8jVp9cG4AWbyeFMAgTpBqOCJVP7PI6HGEheq36Wh+MU=
 github.com/spidexapp/ibc-go/v5 v5.0.0-spidex/go.mod h1:Wqsguq98Iuns8tgTv8+xaGYbC+Q8zJfbpjzT6IgMJbs=
 github.com/ssgreg/nlreturn/v2 v2.2.1/go.mod h1:E/iiPB78hV7Szg2YfRgyIrk1AD6JVMTRkkxBiELzh2I=
