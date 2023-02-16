@@ -74,17 +74,17 @@ cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["coinSymbolList"][0
 
 # disable produce empty block
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' 's/127.0.0.1:26657/0.0.0.0:26657/g' $HOMEDIR/config/config.toml
     sed -i '' 's/create_empty_blocks = true/create_empty_blocks = false/g' $HOMEDIR/config/config.toml
     sed -i '' '$H;x;1,/enable = false/s/enable = false/enable = true/;1d' $HOMEDIR/config/app.toml
     sed -i '' ' s/swagger = false/swagger = true/g' $HOMEDIR/config/app.toml
     sed -i '' 's/enabled-unsafe-cors = false/enabled-unsafe-cors = true/g' $HOMEDIR/config/app.toml
-    sed -i '' 's/0.0.0.0:9090/0.0.0.0:9092/g' $HOMEDIR/config/app.toml
   else
+    sed -i 's/127.0.0.1:26657/0.0.0.0:26657/g' $HOMEDIR/config/config.toml
     sed -i 's/create_empty_blocks = true/create_empty_blocks = false/g' $HOMEDIR/config/config.toml
     sed -i '$H;x;1,/enable = false/s/enable = false/enable = true/;1d' $HOMEDIR/config/app.toml
     sed -i ' s/swagger = false/swagger = true/g' $HOMEDIR/config/app.toml
     sed -i 's/enabled-unsafe-cors = false/enabled-unsafe-cors = true/g' $HOMEDIR/config/app.toml
-    sed -i 's/0.0.0.0:9090/0.0.0.0:9092/g' $HOMEDIR/config/app.toml
 fi
 
 
