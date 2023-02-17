@@ -229,18 +229,18 @@ func (am AppModule) OnTimeoutPacket(
 	modulePacket channeltypes.Packet,
 	relayer sdk.AccAddress,
 ) error {
-	var modulePacketData types.OraclePacketData
-	if err := modulePacketData.Unmarshal(modulePacket.GetData()); err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrUnknownRequest, "cannot unmarshal packet data: %s", err.Error())
-	}
-
-	// Dispatch packet
-	switch packet := modulePacketData.Packet.(type) {
-	// this line is used by starport scaffolding # ibc/packet/module/timeout
-	default:
-		errMsg := fmt.Sprintf("unrecognized %s packet type: %T", types.ModuleName, packet)
-		return sdkerrors.Wrap(sdkerrors.ErrUnknownRequest, errMsg)
-	}
+	//var modulePacketData types.OraclePacketData
+	//if err := modulePacketData.Unmarshal(modulePacket.GetData()); err != nil {
+	//	return sdkerrors.Wrapf(sdkerrors.ErrUnknownRequest, "cannot unmarshal packet data: %s", err.Error())
+	//}
+	//
+	//// Dispatch packet
+	//switch packet := modulePacketData.Packet.(type) {
+	//// this line is used by starport scaffolding # ibc/packet/module/timeout
+	//default:
+	//	errMsg := fmt.Sprintf("unrecognized %s packet type: %T", types.ModuleName, packet)
+	//	return sdkerrors.Wrap(sdkerrors.ErrUnknownRequest, errMsg)
+	//}
 
 	return nil
 }
