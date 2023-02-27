@@ -4,7 +4,9 @@ const (
 	// UpgradeName is the shared upgrade plan name for mainnet and testnet
 	UpgradeName = "v3.0.0"
 
-	MainnetUpgradeHeight = 1202209
+	MainnetUpgradeHeight = 0
 
-	TestnetUpgradeHeight = 1202209
+	TestnetUpgradeHeight = 0
+
+	DevnetUpgradeHeight = 1202209
 )
