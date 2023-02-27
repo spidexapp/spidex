@@ -24,7 +24,7 @@ func (app *App) ScheduleForkUpgrade(ctx sdk.Context) {
 
 	// handle forks
 	switch ctx.BlockHeight() {
-	case v2.MainnetUpgradeHeight:
+	case v2.TestnetUpgradeHeight:
 		upgradePlan.Name = v2.UpgradeName
 	default:
 		// No-op
